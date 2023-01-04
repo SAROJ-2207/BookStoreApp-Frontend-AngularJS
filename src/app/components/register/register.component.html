@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="main-content">
+        <div class="login">
+            <span class="loginName">Registration Form</span><br><br><br>
+            <form class="example-form">
+                
+                <mat-form-field class="example-full-width" appearance="fill">
+                  
+                  <label data-error="Required Field!">Firstname</label>
+                   <input matInput   [(ngModel)]="userLogin.firstName" name="firstName" placeholder="Enter your Firstname">
+                  
+                </mat-form-field> 
+    
+                 <mat-form-field class="example-full-width" appearance="fill">
+                    <label data-error="Required Field!">Lastname:</label>
+                    <input matInput  [(ngModel)]="userLogin.lastName"  name="lastname" >
+                </mat-form-field>
+            
+                <mat-form-field class="example-full-width-sec" appearance="fill">
+                    <label data-error="Required Field!">Address:</label>
+                    <input matInput [(ngModel)]="userLogin.address" name="Address"  >
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width-sec" appearance="fill">
+                    <label data-error="Required Field!">UserID:</label>
+                    <input matInput [(ngModel)]="userLogin.userid" name="userid" >
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width-sec" appearance="fill">
+                    <label data-error="Required Field!">Email:</label>
+                    <input matInput [(ngModel)]="userLogin.email" placeholder="Ex: xyz@gmail.com"  name="email" >
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width-sec" appearance="fill">
+                    <label data-error="Required Password!">Password:</label>
+                    <input matInput [(ngModel)]="userLogin.password" name="password" type="password" >
+                </mat-form-field>
+
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label data-error="Required Field!" class="form-check-label" for="exampleCheck1">Check me out</label>
+                    
+                   <div>
+                    <button class="submit" mat-raised-button color="primary" (click)="onsubmit()"  type="submit">Submit</button>  
+                  </div>
+                            
+              </form>
+        </div>
+    </div>
+</div> 
+ 

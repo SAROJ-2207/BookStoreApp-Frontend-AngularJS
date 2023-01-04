@@ -1,0 +1,51 @@
+.container{
+   
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.main-content{
+    border-radius: 10px;
+    border-style:ridge;
+    border-width: 3px;
+    margin: 10%;
+}
+.login{
+    padding: 10%;
+    background-color:white;
+}
+.loginName{
+  border: 1px solid rgb(12, 11, 11);
+  background-color:  rgb(240, 85, 50);
+  padding-top: 5px;
+  padding-right: 180px;
+  padding-bottom: 5px;
+  padding-left: 180px;
+      font-family:lato;
+      font-size: 4.5em;
+    font-size: large;
+    text-transform:uppercase;
+    color: rgb(15, 14, 14);
+    margin-bottom: 30px;
+}
+.example-form {
+    min-width: 190px;
+    max-width: 700px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .submit{
+    color: white;
+    background-color: rgb(9, 0, 128);
+    padding: 5px;
+    margin-right: 60%;
+  }
+  .register{
+    color: white;
+    background-color: rgb(9, 0, 128);
+  }

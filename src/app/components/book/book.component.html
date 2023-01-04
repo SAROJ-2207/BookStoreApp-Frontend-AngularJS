@@ -1,0 +1,29 @@
+<div class="home-content">
+  <div class="book-text head">Books 
+
+    <select class="sort-content" name="sortbook" id="sortbook" [ngModel]="sorting" (ngModelChange)="OnSortAsc($event)">
+      <option value="sort by name des" value="0"> Sort By relevance</option>
+      <option class="dropdown-item" type="button" value="1">Price: Low to High </option>     
+      <option class="dropdown-item" type="button" value="2" >Price: High to Low</option>
+      <option value="sort by Price">Newest Arrivals</option>
+    </select>
+
+  </div>
+</div>
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxLayout.xs="column" fxLayout="row wrap" fxLayoutGap="10px" ngClass.gt-xs="ml-10">
+  
+    <mat-card fxFlex.sm="0 1 calc(40%-10px)" fxFlex.md="0 1 calc(33%-10px)" fxFlex.gt-md="0 1 calc(25%-10px)" *ngFor="let bookModelData of list">
+      <mat-card-title> <h2 class="book-title">{{bookModelData.bookName}}</h2></mat-card-title>
+      <img mat-card-image src="{{bookModelData.bookImage}}" width="200px" class="image">
+      <mat-card-content style="width: 200px;">
+       
+        <h2 class="auther-name">{{bookModelData.authorName}}</h2>
+          <div class="book-price">Price: <b>&#8377; {{bookModelData.bookPrice}}</b></div></mat-card-content>
+       <mat-card-actions>
+        <button class="add-to-cart actions" mat-stroked-button (click)=addToCart(bookModelData)>ADD TO BAG</button>
+            <button class="wishlist actions" mat-stroked-button (click)=addWishList(bookModelData)>WishList</button>
+      </mat-card-actions>
+    </mat-card>  
+  </div> 
+</div>

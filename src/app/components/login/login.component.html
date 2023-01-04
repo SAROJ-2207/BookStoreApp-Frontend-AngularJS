@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="main-content">
+        <div class="login">
+            <label class="loginName">Login</label><br>
+            <form class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <!-- <input matInput [(ngModel)]="userLogin.email" name="emailId" placeholder="Ex. xyz@abc.com" > -->
+                  <label>Email:</label>
+                  <input matInput  [(ngModel)]="emailLog.email" name="EmailId" placeholder="Ex. xyz@abc.com" value="">
+                </mat-form-field> 
+              
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <label>Password:</label>
+                    <input matInput [(ngModel)]="emailLog.password" placeholder="Enter your password" name="password" type="password" >
+                </mat-form-field>
+
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    
+                      <div>
+                    <button class="submit" mat-raised-button color="primary" (click)="login()"  type="submit">Log In</button>  
+                    <button class="register"  mat-raised-button color="primary" routerLink="/register" mat-raised-button >Register</button>
+                  </div>             
+              </form>
+        </div>
+    </div>
+</div>

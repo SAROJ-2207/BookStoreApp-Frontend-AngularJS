@@ -1,0 +1,20 @@
+<header class="header-content">
+    <div class="book">
+      <img class="book-logo" (click)="goHome()" src="../../../assets/education.svg" alt="booklogo">
+      <div class="header-name" (click)="goHome()">BookStore</div>
+       <div>
+        <input class="search"  type="text"  name="search" placeholder=" search product">
+      </div> 
+      <!-- ../../../assets/searchlogo.png -->
+      <span><img class ="search-button" src="" (click)="searchSubmit()"><button class ="search-button">Search</button></span>
+          <ul class="suggested-result">
+            <li *ngFor ="let item of searchResult">
+              <h1>{{item.name}}</h1>
+            </li>
+          </ul>  
+      <div class="cart-name">Cart</div>
+        <div><img class="cart-logo" src="../../../assets/cart2.png" (click)="goCart()" alt="cart logo">{{count}}</div>
+        <div><img class="wish-logo" src="../../../assets/wish.png" alt="wish-logo" (click)="goWish()"></div>
+        <div><img class="login-logo" src="../../../assets/login.png"  (click)="login()" alt="login logo"></div>
+    </div>
+</header>

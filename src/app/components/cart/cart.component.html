@@ -1,0 +1,74 @@
+<mat-vertical-stepper *ngIf="cartservice.cartItemList.length>0">
+    <mat-step label="My Cart">
+        <div class="part1" *ngFor="let bookModelData of cartservice.cartItemList">
+            <div class="book-image" style="width: 200px;">
+                <img class="book-summary" src="{{bookModelData.bookImage}}" alt=""></div>
+              <div>
+
+            <div class="book-title">{{bookModelData.bookName}}</div>
+            <div class="auther-name">{{bookModelData.authorName}}</div>
+            <div class="book-price">Price: &#8377; {{bookModelData.bookPrice*bookModelData.bookQuantity}}</div>
+
+            <div class="part2">
+            <button class="minus" style="height: 20px;border: gray;  border-radius: 50px;" (click)="decrease(bookModelData)" > - </button>
+            <label  class="number" type="text"style="padding: 0 0 5px 5px;"> {{bookModelData.bookQuantity}} </label>
+            <button class="plus" style="height: 20px;border: gray;  border-radius: 50px;" (click)="incresase(bookModelData)" > &nbsp;+ </button>
+            <span class="remove-text" (click)="remove(bookModelData)">Remove</span>
+            </div>    
+        </div>
+    </div>
+        <button mat-raised-button color="primary" class="select-address" matStepperNext (click)="addToOrder()">Place Order</button>
+    </mat-step>
+  
+    <mat-step label="Customer Details">
+        <div class="cust-detail">
+            <div>
+                <input class="text-input" type="text" [(ngModel)]="cartUser.name"    name="name" placeholder="Name">
+                <input class="text-input" type="text" [(ngModel)]="cartUser.phoneNumber"  name="phoneno" placeholder="Phone number">
+            </div>
+            <div>
+                <input class="text-input" type="text" [(ngModel)]="cartUser.pinCode" name="pincode" placeholder="Pin Code">
+                <input class="text-input" type="text" [(ngModel)]="cartUser.locality" name="locality" placeholder="Locality">
+            </div>
+            <div>
+                <input class="address-input" type="text" [(ngModel)]="cartUser.address" name="address" placeholder="Address">
+            </div>
+            <div>
+                <input class="text-input" type="text" [(ngModel)]="cartUser.city" name="city" placeholder="City/Town">
+                <input class="text-input" type="text" [(ngModel)]="cartUser.landmark" name="landmark" placeholder="Landmark"><br>
+                <input class="text-input" type="text" [(ngModel)]="cartUser.email" name="email" placeholder="email">
+            </div>
+            <div class="type">
+            Type<br>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="Home">Home</mat-radio-button>
+                    <mat-radio-button value="Office">Office</mat-radio-button>
+                    <mat-radio-button value="Others">Others</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" class="back-btn" matStepperPrevious>cancel</button>
+                <button mat-raised-button color="primary" class="next-btn" matStepperNext >Continue</button>
+            </div>
+        </div>
+    </mat-step>
+  
+
+    <mat-step label="Order Summary">
+        <div class="payment">
+            <!-- <div class="book-image">
+              <img class="book-summary" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCPfqipS-kvukZ5LsjooogPkldLZScQk6aGw&usq" alt=""></div> -->
+            <div>
+                <!-- <div class="book-title">Artificial Intelligence Revolution</div>
+                <div class="auther-name">by Vibha Soni</div> -->
+                <div class="book-price">Grand Total :- &#8377; {{grandtotal(cartservice.cartItemList)}}</div>
+            </div>
+        </div>
+        <div>
+        <button mat-raised-button color="primary" class="back-btn" matStepperPrevious>cancel</button>
+        <button mat-raised-button color="primary" class="checkout-btn" matStepperNext (click)="onCheckout()">Checkout</button>
+        <br><br><br><br>
+        <br><br>
+    </div>
+    </mat-step>
+  </mat-vertical-stepper>

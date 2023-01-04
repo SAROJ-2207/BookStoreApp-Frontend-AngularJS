@@ -1,0 +1,19 @@
+
+<div class="container" fxLayout="column" >
+<div class="part1" *ngFor="let bookModelData of this.wishListItems">
+    <div class="book-image" style="width: 200px;">
+        <img class="book-summary" src="{{bookModelData.bookImage}}" alt=""></div>
+      <div>
+
+    <div class="book-title">{{bookModelData.bookName}}</div>
+    <div class="auther-name">{{bookModelData.authorName}}</div>
+    <div class="book-price">Price: &#8377; {{bookModelData.bookPrice}}</div>
+
+    <div class="part2">
+    
+    
+    <button class="wishlist actions" mat-stroked-button (click)="remove(bookModelData)" ><span class="remove-text" >Remove</span></button>
+    </div>    
+</div>
+</div>
+</div>
